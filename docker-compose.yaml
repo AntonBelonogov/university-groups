@@ -12,12 +12,10 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
-volumes:
-  db_data:
 
   backend:
     build:
-      context: ./backend
+      context: ./university-groups-backend
     container_name: university-groups-backend
     ports:
       - "8080:8080"
@@ -32,9 +30,12 @@ volumes:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./university-groups-frontend
     container_name: university-groups-frontend
     ports:
       - "5173:80"
     depends_on:
       - backend
+
+volumes:
+  db_data:
