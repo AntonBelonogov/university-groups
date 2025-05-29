@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class GroupInputDto {
 
-    @Pattern(regexp = "^\\d{2}-\\d{2}$\n", message = "The group number must be in the format '12-34'")
+    @Pattern(regexp = "^\\d{2}-\\d{2}$", message = "The group number must be in the format '12-34'")
     @NotBlank(message = "Group number is required")
     private String groupName;
 
